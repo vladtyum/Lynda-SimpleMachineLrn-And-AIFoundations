@@ -34,3 +34,66 @@ print(value)
 ```
 here we defined weights by ourselves
 this algorithm is called __linear regression__
+
+
+
+
+#### Lesson2 Cost_function
+Previous code can we rewritten in simpler way
+
+```python
+house_value = 5000 + (size * weight1) + (bedrooms * weight2)
+```
+Goal from this point is to __define weights__ which __most closely__ correlates with real word values
+
+So we get data and do reverse-engineering
+We have training data
+![](assets/README-585143d9.png)
+
+From here tutorial goes into "let's do that and that and cost function, and baaam, here we go"
+
+I don't like not to have opportunity to play with cost function by myself.
+Let's go to learn hot code linear regression, yo!
+
+
+
+[__∞Linear regression for machine learning∞__](https://machinelearningmastery.com/simple-linear-regression-tutorial-for-machine-learning/)
+
+There are two types of them simple and multiple
+We start with simple
+
+[Wiki. Simple linear regression.  ](https://en.wikipedia.org/wiki/Simple_linear_regression)
+
+```
+y = B0 + B1 * x
+```
+Technically, __B0__ is called the __intercept__ because it determines where the line intercepts the y-axis
+In machine learning we can call this __the bias__*(this word used to confuse me. Now its clear = __offset, displacement__)* , because it is added to offset all predictions that we make.
+
+The __B1__ term is called __the slope__ because it defines the slope of the line or how x translates into a y value before we add our bias.
+
+We can start off by estimating the value for B1 as:
+```
+B1 = sum((xi-mean(x)) * (yi-mean(y))) / sum((xi – mean(x))^2)
+```
+Where mean() is the average value for the variable in our dataset. The xi and yi refer to the fact that we need to repeat these calculations across all values in our dataset and i refers to the i’th value of x or y.
+
+....Aghhmm
+
+Still too dense, am i really that dumb ))
+
+
+https://www.youtube.com/watch?v=ZkjP5RJLQF4  
+This video simplier then even KhanAcademy
+![](assets/README-638606cc.png)
+
+Close to real life situation
+
+__Big task:__  
+Waiter trying to make predictions about tips base on amount of the bill.
+
+__First task:__  
+predict tips, base on only 6 values of the tips given , without bill price.
+From here only way can predict further tips is only __the mean__
+
+Residuals=Errors
